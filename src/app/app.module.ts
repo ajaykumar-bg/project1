@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { CoreModule } from './core';
 import { SharedModule } from './shared';
+import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
 
@@ -13,7 +14,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
