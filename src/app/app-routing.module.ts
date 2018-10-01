@@ -4,11 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: 'users',
-    loadChildren: 'app/users/users.module#UsersModule'
+    loadChildren: './users/users.module#UsersModule'
   },
   {
     path: 'tasks',
-    loadChildren: 'app/tasks/tasks.module#TasksModule'
+    loadChildren: './tasks/tasks.module#TasksModule'
   },
   {
     path: '',
@@ -22,7 +22,6 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports: [RouterModule],
-  providers: [],
-  declarations: []
+  providers: []
 })
 export class AppRoutingModule { }

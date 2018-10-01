@@ -6,7 +6,8 @@ import { SharedModule } from './shared';
 import { MaterialModule } from './material.module';
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [

@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular 6 project';
-  description = 'Manage users & tasks';
+  description = 'Manage users & tasks - Lazy loading feature modules';
 }
