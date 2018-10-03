@@ -47,7 +47,7 @@ export class TaskDetailComponent implements OnInit {
     this.router.navigate(['tasks']);
   }
 
-  update(): void {
+  save(): void {
     this.taskService.updateTask(this.editTaskForm.value)
       .subscribe(() => this.goBack());
   }
