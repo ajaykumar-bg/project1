@@ -1,3 +1,17 @@
-<p>
-  task-detail works!
-</p>
+
+    <form [formGroup]="editTaskForm" class="example-form" (ngSubmit)="save()">
+        <h2 class="text-center">Edit Task</h2>
+  
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" formControlName="name" autocomplete="off">
+          <mat-error *ngIf="editTaskForm.controls.name.invalid && editTaskForm.controls.name.touched" class="has-text-danger">
+              Invalid name
+          </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button mat-raised-button [disabled]="editTaskForm.invalid" (click)="save()" color="primary">Update</button>
+        <button mat-raised-button (click)="goBack()" color="warn">Cancel</button>
+      </div>
+  
+    </form>
