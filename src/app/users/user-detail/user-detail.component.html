@@ -1,12 +1,25 @@
-<div *ngIf="user">
-  {{user | json}}
-    <!-- <h2>{{user.fname}} {{user.lname}} - Details</h2>
-    <div><span>id: </span>{{user.id}}</div>
-    <div>
-      <label>name:
-        <input [(ngModel)]="user.fname" placeholder="fname"/>
-      </label>
-    </div>
-    <button (click)="goBack()">go back</button>
-    <button (click)="save()">save</button> -->
+<div class="col-md-6">
+    <h2 class="text-center">Edit User</h2>
+    <form [formGroup]="editUserForm" (ngSubmit)="onSubmit()">
+  
+      <div class="form-group">
+        <label for="firstName">First Name:</label>
+        <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+      </div>
+  
+      <div class="form-group">
+        <label for="lastName">Last Name:</label>
+        <input formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+      </div>
+      <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+        </div>
+      <div class="form-group">
+          <label for="age">Age:</label>
+          <input type="age" formControlName="age" placeholder="age" name="age" class="form-control" id="age">
+      </div>
+  
+      <button class="btn btn-success">Update</button>
+    </form>
   </div>
