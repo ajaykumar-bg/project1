@@ -20,8 +20,9 @@
                 <td>{{user.email}}</td>
                 <td>
                   <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary">View</button>
-                    <button type="button" class="btn btn-warning">Edit</button>
+                    <button type="button" class="btn btn-primary" routerLink="/detail/{{user.id}}">
+                      Details
+                    </button>
                     <button type="button" class="btn btn-danger">Delete</button>
                   </div>
                 </td>
