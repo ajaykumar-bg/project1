@@ -1,3 +1,27 @@
-<p>
-  task-list works!
-</p>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+      Tasks
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+              <th>ID</th>
+              <th>Name</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let task of tasks">
+                <td>{{task.id}}</td>
+                <td>{{task.name}}</td>
+                <td>
+                    <div class="button-row">
+                        <button mat-stroked-button color="primary" routerLink="detail/{{task.id}}">Details</button>
+                        <button mat-stroked-button color="warn" (click)="delete(task)">Delete</button>
+                      </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+    </div>
+
+  </div>

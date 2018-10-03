@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { User } from './users/user';
+import { Task } from './tasks/task';
 
 @Injectable({
   providedIn: 'root'
@@ -20,16 +21,25 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, firstName: 'Midhun', lastName: 'Mohan', age: 26, email: 'midhun@pro.com' },
       { id: 20, firstName: 'Sneha', lastName: 'Susan', age: 26, email: 'sneha@pro.com' }
     ];
-    return {users};
+    const tasks: Task[] = [
+      { id: 11, name: 'Task 1'},
+      { id: 12, name: 'Task 2'},
+      { id: 13, name: 'Task 3'},
+      { id: 14, name: 'Task 4'},
+      { id: 15, name: 'Task 5'},
+      { id: 16, name: 'Task 6'},
+    ];
+
+    return {users, tasks};
   }
 
-  // Overrides the genId method to ensure that a user always has an id.
-  // If the users array is empty,
+  // Overrides the genId method to ensure that a task always has an id.
+  // If the tasks array is empty,
   // the method below returns the initial number (11).
-  // if the users array is not empty, the method below returns the highest
-  // user id + 1.
-  genId(users: User[]): number {
-    return users.length > 0 ? Math.max(...users.map(user => user.id)) + 1 : 11;
+  // if the tasks array is not empty, the method below returns the highest
+  // task id + 1.
+  genId(tasks: Task[]): number {
+    return tasks.length > 0 ? Math.max(...tasks.map(task => task.id)) + 1 : 11;
   }
 
   constructor() { }
