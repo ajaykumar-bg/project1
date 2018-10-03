@@ -7,14 +7,13 @@ import { Task } from '../task';
 import { TaskService } from '../../task.service';
 
 @Component({
-  selector: 'app-task-detail',
-  templateUrl: './task-detail.component.html',
-  styleUrls: ['./task-detail.component.css']
+  selector: 'app-add-task',
+  templateUrl: './add-task.component.html',
+  styleUrls: ['./add-task.component.css']
 })
-export class TaskDetailComponent implements OnInit {
+export class AddTaskComponent implements OnInit {
 
-  editTaskForm: FormGroup;
-  @Input() task: Task;
+  addTaskForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -25,31 +24,20 @@ export class TaskDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.editTaskForm = this.fb.group({
+    this.addTaskForm = this.fb.group({
       id: ['', [
       ]],
       name: ['', [
         Validators.required
       ]]
     });
-    this.getTask();
   }
 
-  getTask(): void {
-    const taskId = +this.route.snapshot.paramMap.get('id');
-    this.taskService.getTask(+taskId)
+  save() {
+    this.taskService.addTask(this.addTaskForm.value)
       .subscribe( data => {
-        this.editTaskForm.setValue(data);
+        this.router.navigate(['tasks']);
       });
-  }
-
-  goBack(): void {
-    this.router.navigate(['tasks']);
-  }
-
-  update(): void {
-    this.taskService.updateTask(this.editTaskForm.value)
-      .subscribe(() => this.goBack());
   }
 
 }

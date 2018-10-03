@@ -58,7 +58,7 @@ export class UserDetailComponent implements OnInit {
     this.router.navigate(['users']);
   }
 
- save(): void {
+  update(): void {
     this.userService.updateUser(this.editUserForm.value)
       .subscribe(() => this.goBack());
   }
