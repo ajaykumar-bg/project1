@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 6 project';
-  description = 'Manage users & tasks - Lazy loading feature modules';
+  title = 'Lazy loading feature modules';
+  description = 'Manage users & tasks';
 }
