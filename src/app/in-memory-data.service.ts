@@ -9,16 +9,16 @@ export class InMemoryDataService implements InMemoryDbService {
 
   createDb() {
     const users: User[] = [
-      { id: 11, fname: 'Mr. Nice', lname: '', age: 20, email: 'a@b.com' },
-      { id: 12, fname: 'Narco', lname: '', age: 20, email: 'a@b.com' },
-      { id: 13, fname: 'Bombasto', lname: '', age: 20, email: 'a@b.com' },
-      { id: 14, fname: 'Celeritas', lname: '', age: 20, email: 'a@b.com' },
-      { id: 15, fname: 'Magneta', lname: '', age: 20, email: 'a@b.com' },
-      { id: 16, fname: 'RubberMan', lname: '', age: 20, email: 'a@b.com' },
-      { id: 17, fname: 'Dynama', lname: '', age: 20, email: 'a@b.com' },
-      { id: 18, fname: 'Dr IQ', lname: '', age: 20, email: 'a@b.com' },
-      { id: 19, fname: 'Magma', lname: '', age: 20, email: 'a@b.com' },
-      { id: 20, fname: 'Tornado', lname: '', age: 20, email: 'a@b.com' }
+      { id: 11, fname: 'Ajay Kumar', lname: 'BG', age: 28, email: 'ajay@pro.com' },
+      { id: 12, fname: 'Mufsir', lname: 'AK', age: 28, email: 'mufsir@pro.com' },
+      { id: 13, fname: 'Manu', lname: 'Sithara', age: 27, email: 'manu@pro.com' },
+      { id: 14, fname: 'Dhanil', lname: 'R', age: 30, email: 'dhanil@pro.com' },
+      { id: 15, fname: 'Neethu', lname: 'J', age: 26, email: 'neethu@pro.com' },
+      { id: 16, fname: 'Vaibhavi', lname: 'Belur', age: 27, email: 'vaibhavi@pro.com' },
+      { id: 17, fname: 'Lovin', lname: 'Chacko', age: 24, email: 'lovin@pro.com' },
+      { id: 18, fname: 'Aleena', lname: 'Chacko', age: 26, email: 'aleena@pro.com' },
+      { id: 19, fname: 'Midhun', lname: 'Mohan', age: 26, email: 'midhun@pro.com' },
+      { id: 20, fname: 'Sneha', lname: 'Susan', age: 26, email: 'sneha@pro.com' }
     ];
     return {users};
   }
