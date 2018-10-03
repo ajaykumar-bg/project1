@@ -26,4 +26,9 @@ export class UserListComponent implements OnInit {
     .subscribe(users => this.users = users);
   }
 
+  delete(user: User): void {
+    this.users = this.users.filter(h => h !== user);
+    this.userService.deleteUser(user).subscribe();
+  }
+
 }

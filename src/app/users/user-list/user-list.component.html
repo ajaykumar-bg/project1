@@ -19,12 +19,10 @@
                 <td>{{user.age}}</td>
                 <td>{{user.email}}</td>
                 <td>
-                  <div class="btn-group" role="group">
-                    <button type="button" class="btn btn-primary" routerLink="detail/{{user.id}}">
-                      Details
-                    </button>
-                    <button type="button" class="btn btn-danger">Delete</button>
-                  </div>
+                    <div class="button-row">
+                        <button mat-stroked-button color="primary" routerLink="detail/{{user.id}}">Details</button>
+                        <button mat-stroked-button color="warn" (click)="delete(user)">Delete</button>
+                      </div>
                 </td>
               </tr>
             </tbody>
