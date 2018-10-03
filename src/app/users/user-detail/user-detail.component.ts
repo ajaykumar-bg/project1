@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -17,6 +17,7 @@ export class UserDetailComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private router: Router,
     private route: ActivatedRoute,
     private userService: UserService,
     private location: Location
@@ -54,11 +55,11 @@ export class UserDetailComponent implements OnInit {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['users']);
   }
 
  save(): void {
-    this.userService.updateUser(this.user)
+    this.userService.updateUser(this.editUserForm.value)
       .subscribe(() => this.goBack());
   }
 
