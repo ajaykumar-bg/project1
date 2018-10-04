@@ -13,9 +13,10 @@ import { UserService } from '../../user.service';
 export class UserListComponent implements OnInit {
 
   users: User[];
+  displayedColumns: string[] = ['id', 'firstName', 'lastName', 'age', 'email', 'actions'];
 
   constructor(private userService: UserService) {
-   }
+  }
 
   ngOnInit() {
     this.getUsers();

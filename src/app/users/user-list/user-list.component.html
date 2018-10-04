@@ -1,32 +1,49 @@
-<div class="panel panel-primary">
-    <div class="panel-heading">
-      Users
-    </div>
-    <div class="panel-body">
-        <table class="table table-striped">
-            <thead>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Age</th>
-              <th>Email</th>
-              <th>Actions</th>
-            </thead>
-            <tbody>
-              <tr *ngFor="let user of users">
-                <td>{{user.id}}</td>
-                <td>{{user.firstName}} {{user.lname}}</td>
-                <td>{{user.age}}</td>
-                <td>{{user.email}}</td>
-                <td>
-                    <div class="button-row">
-                        <button mat-stroked-button color="primary" routerLink="detail/{{user.id}}">Details</button>
-                        <button mat-stroked-button color="warn" (click)="delete(user)">Delete</button>
-                      </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+<table mat-table [dataSource]="users" class="mat-elevation-z8">
 
-    </div>
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID. </th>
+      <td mat-cell *matCellDef="let user"> {{user.id}} </td>
+    </ng-container>
+  
+    <!-- First Name Column -->
+    <ng-container matColumnDef="firstName">
+      <th mat-header-cell *matHeaderCellDef> First Name </th>
+      <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+    </ng-container>
+  
+    <!-- Last Name Column -->
+    <ng-container matColumnDef="lastName">
+      <th mat-header-cell *matHeaderCellDef> Last Name </th>
+      <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+    </ng-container>
+  
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let user"> {{user.age}} </td>
+    </ng-container>
 
-  </div>
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef> Email </th>
+      <td mat-cell *matCellDef="let user"> {{user.email}} </td>
+    </ng-container>
+
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let user"> 
+          <div class="button-row">
+              <button mat-stroked-button color="primary" routerLink="detail/{{user.id}}">Details</button>
+              <button mat-stroked-button color="warn" (click)="delete(user)">Delete</button>
+            </div>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
