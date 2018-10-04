@@ -2,3 +2,17 @@
 .button-row a {
   margin-right: 8px;
 }
+
+table {
+  width: 100%;
+}
+
+.example-card {
+  margin: 20px;
+  max-width: 100%;
+  }
+  
+  .example-header-image {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/8/89/Portrait_Placeholder.png');
+  background-size: cover;
+  }
