@@ -36,8 +36,12 @@ export class AddTaskComponent implements OnInit {
   save() {
     this.taskService.addTask(this.addTaskForm.value)
       .subscribe( data => {
-        this.router.navigate(['tasks']);
+        this.goBack();
       });
+  }
+
+  goBack(): void {
+    this.router.navigate(['tasks']);
   }
 
 }
