@@ -27,8 +27,10 @@ export class AddTaskComponent implements OnInit {
     this.addTaskForm = this.fb.group({
       id: ['', [
       ]],
-      name: ['', [
+      taskName: ['', [
         Validators.required
+      ]],
+      description: ['', [
       ]]
     });
   }

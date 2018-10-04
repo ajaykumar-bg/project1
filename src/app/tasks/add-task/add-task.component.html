@@ -7,10 +7,13 @@
             <mat-card-content>
                     <form [formGroup]="addTaskForm" class="example-form" (ngSubmit)="save()">
                             <mat-form-field class="example-full-width">
-                              <input matInput placeholder="Name" formControlName="name" autocomplete="off">
-                              <mat-error *ngIf="addTaskForm.controls.name.invalid && addTaskForm.controls.name.touched" class="has-text-danger">
-                                  Invalid name
+                              <input matInput placeholder="Task Name" formControlName="taskName" autocomplete="off">
+                              <mat-error *ngIf="addTaskForm.controls.taskName.invalid && addTaskForm.controls.taskName.touched" class="has-text-danger">
+                                  Invalid Task Name
                               </mat-error>
+                          </mat-form-field>
+                          <mat-form-field class="example-full-width">
+                              <textarea matInput placeholder="Leave a description" formControlName="description" autocomplete="off"></textarea>
                           </mat-form-field>
                       
                         </form>

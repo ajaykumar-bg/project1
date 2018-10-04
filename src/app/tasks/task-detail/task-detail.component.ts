@@ -28,8 +28,10 @@ export class TaskDetailComponent implements OnInit {
     this.editTaskForm = this.fb.group({
       id: ['', [
       ]],
-      name: ['', [
+      taskName: ['', [
         Validators.required
+      ]],
+      description: ['', [
       ]]
     });
     this.getTask();

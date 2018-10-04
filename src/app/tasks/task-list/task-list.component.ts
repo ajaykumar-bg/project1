@@ -11,7 +11,7 @@ import { TaskService } from '../../task.service';
 export class TaskListComponent implements OnInit {
 
   tasks: Task[];
-  displayedColumns: string[] = ['id', 'name', 'actions'];
+  displayedColumns: string[] = ['id', 'taskName', 'actions'];
 
   constructor(private taskService: TaskService) { }
 

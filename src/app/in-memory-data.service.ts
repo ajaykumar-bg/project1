@@ -22,12 +22,12 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 20, firstName: 'Sneha', lastName: 'Susan', age: 26, email: 'sneha@pro.com' }
     ];
     const tasks: Task[] = [
-      { id: 11, name: 'Task 1'},
-      { id: 12, name: 'Task 2'},
-      { id: 13, name: 'Task 3'},
-      { id: 14, name: 'Task 4'},
-      { id: 15, name: 'Task 5'},
-      { id: 16, name: 'Task 6'},
+      { id: 11, taskName: 'Task 1', description: ''},
+      { id: 12, taskName: 'Task 2', description: ''},
+      { id: 13, taskName: 'Task 3', description: ''},
+      { id: 14, taskName: 'Task 4', description: ''},
+      { id: 15, taskName: 'Task 5', description: ''},
+      { id: 16, taskName: 'Task 6', description: ''}
     ];
 
     return {users, tasks};
