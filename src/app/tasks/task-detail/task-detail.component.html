@@ -1,30 +1,25 @@
 <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Edit Task</mat-card-title>
-              <mat-card-subtitle>Edit an existing task here</mat-card-subtitle>
-            </mat-card-header>
-            <mat-card-content>
-                    <form [formGroup]="editTaskForm" class="example-form" (ngSubmit)="save()">
-                            <mat-form-field class="example-full-width">
-                              <input matInput placeholder="Task Name" formControlName="taskName" autocomplete="off">
-                              <mat-error *ngIf="editTaskForm.controls.taskName.invalid && editTaskForm.controls.taskName.touched" class="has-text-danger">
-                                  Invalid Task Name
-                              </mat-error>
-                          </mat-form-field>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Edit Task</mat-card-title>
+    <mat-card-subtitle>Edit an existing task here</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="editTaskForm" class="example-form" (ngSubmit)="save()">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Task Name" formControlName="taskName" autocomplete="off">
+        <mat-error *ngIf="editTaskForm.controls.taskName.invalid && editTaskForm.controls.taskName.touched" class="has-text-danger">
+          Invalid Task Name
+        </mat-error>
+      </mat-form-field>
 
-                          <mat-form-field class="example-full-width">
-                              <textarea matInput placeholder="Leave a description" formControlName="description" autocomplete="off"></textarea>
-                          </mat-form-field>
-                        </form>
-            </mat-card-content>
-            <mat-card-actions>
-                    <button mat-raised-button [disabled]="editTaskForm.invalid" (click)="save()" color="primary">Update</button>
-        <button mat-raised-button (click)="goBack()" color="warn">Cancel</button>
-            </mat-card-actions>
-          </mat-card>
-    
-    
-    
-    
-        
+      <mat-form-field class="example-full-width">
+        <textarea matInput placeholder="Leave a description" formControlName="description" autocomplete="off"></textarea>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [disabled]="editTaskForm.invalid" (click)="save()" color="primary">Update</button>
+    <button mat-raised-button (click)="goBack()" color="warn">Cancel</button>
+  </mat-card-actions>
+</mat-card>

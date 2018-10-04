@@ -1,44 +1,39 @@
 <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{this.editUserForm.value.firstName }} {{this.editUserForm.value.lastName }}</mat-card-title>
-          <mat-card-subtitle>{{this.editUserForm.value.email }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-                <form [formGroup]="editUserForm" class="example-form" (ngSubmit)="save()">
-                      
-                      <mat-form-field class="example-full-width">
-                          <input matInput placeholder="First name" formControlName="firstName" autocomplete="off">
-                          <mat-error *ngIf="editUserForm.controls.firstName.invalid && editUserForm.controls.firstName.touched" class="has-text-danger">
-                              Invalid firstName
-                          </mat-error>
-                      </mat-form-field>
-                  
-                      <mat-form-field class="example-full-width">
-                          <input matInput placeholder="Last name" formControlName="lastName" autocomplete="off">
-                      </mat-form-field>
-                      <mat-form-field class="example-full-width">
-                          <input matInput placeholder="email" formControlName="email" autocomplete="off">
-                          <mat-error *ngIf="editUserForm.controls.email.invalid && editUserForm.controls.email.touched" class="has-text-danger">
-                              Invalid email
-                          </mat-error>
-                      </mat-form-field>
-                      <mat-form-field class="example-full-width">
-                          <input matInput placeholder="age" formControlName="age" autocomplete="off">
-                          <mat-error *ngIf="editUserForm.controls.age.invalid && editUserForm.controls.age.touched" class="has-text-danger">
-                              Invalid age
-                          </mat-error>
-                      </mat-form-field>
-                  
-                    </form>
-        </mat-card-content>
-        <mat-card-actions>
-                <button mat-raised-button [disabled]="editUserForm.invalid" (click)="save()" color="primary">Update</button>
-                <button mat-raised-button (click)="goBack()" color="warn">Cancel</button>
-        </mat-card-actions>
-      </mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{this.editUserForm.value.firstName }} {{this.editUserForm.value.lastName }}</mat-card-title>
+    <mat-card-subtitle>{{this.editUserForm.value.email }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="editUserForm" class="example-form" (ngSubmit)="save()">
 
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="First name" formControlName="firstName" autocomplete="off">
+        <mat-error *ngIf="editUserForm.controls.firstName.invalid && editUserForm.controls.firstName.touched" class="has-text-danger">
+          Invalid firstName
+        </mat-error>
+      </mat-form-field>
 
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Last name" formControlName="lastName" autocomplete="off">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="email" formControlName="email" autocomplete="off">
+        <mat-error *ngIf="editUserForm.controls.email.invalid && editUserForm.controls.email.touched" class="has-text-danger">
+          Invalid email
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="age" formControlName="age" autocomplete="off">
+        <mat-error *ngIf="editUserForm.controls.age.invalid && editUserForm.controls.age.touched" class="has-text-danger">
+          Invalid age
+        </mat-error>
+      </mat-form-field>
 
-
-    
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button [disabled]="editUserForm.invalid" (click)="save()" color="primary">Update</button>
+    <button mat-raised-button (click)="goBack()" color="warn">Cancel</button>
+  </mat-card-actions>
+</mat-card>
